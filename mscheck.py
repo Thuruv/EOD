@@ -1,5 +1,12 @@
 from twill import *
 from bs4 import BeautifulSoup
+
+"""
+    Midnight Site Check Buy button Finder
+"""
+
+
+
 mybrowser = get_browser()
 m1 = ['http://www.groupon.com/deals/gg-womens-stretch-skinny-jeans-1','http://www.groupon.com/deals/superdawg-drive-in-1-3']
 for i in m1:
