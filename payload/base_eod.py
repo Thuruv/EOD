@@ -1,4 +1,5 @@
 import urllib
+import string
 import re
 import json
 url = "https://www.groupon.com/deals/gg-005-professional-3d-teeth-whitening-kit-1"
