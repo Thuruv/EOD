@@ -1,4 +1,4 @@
-__dir__ = 'c:/users/c_thv/desktop'
+#__dir__ = 'c:/users/c_thv/desktop'
 
 #   Hope Works.
 #   Fix Me : Multiple choices at minimal time.
@@ -6,6 +6,7 @@ __dir__ = 'c:/users/c_thv/desktop'
 import hashlib
 #print hashlib.md5('This would work fine')
 from PIL import Image
+
 test = Image.open('c:/users/c_thv/desktop/1.jpg')
 test1 = Image.open('c:/users/c_thv/desktop/1.jpg')
 def dhash(image, hash_size = 8):
@@ -32,4 +33,6 @@ def dhash(image, hash_size = 8):
                 decimal_value = 0
 
         return ''.join(hex_string)
-print dhash(test) == dhash(test1)
+#print dhash(test) == dhash(test1)
+
+
