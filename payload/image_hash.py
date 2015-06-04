@@ -1,7 +1,7 @@
 #__dir__ = 'c:/users/c_thv/desktop'
+#http://blog.iconfinder.com/detecting-duplicate-images-using-python/
 
-#   Hope Works.
-#   Fix Me : Multiple choices at minimal time.
+#   Fix Me : Multiple image comparison at minimal time.
 
 import hashlib
 #print hashlib.md5('This would work fine')

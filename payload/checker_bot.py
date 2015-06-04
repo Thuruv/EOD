@@ -3,6 +3,7 @@ import os
 import urllib
 import re
 import json
+import collections
 import PIL
 import Image
 from image_hash import dhash
@@ -39,18 +40,26 @@ def get_image_from_output(out_list):
         for num in range(len(temp)):
             urllib.urlretrieve(out_list[num],os.path.join(os.getcwd()+'/test/' + str(out_list[num]).split('/',-1)[4] + '.jpg'))
 
-get_image_from_output(temp)
+def url_chk(out_list2):
+    dups =  [x for x, y in collections.Counter(out_list2).items() if y > 1]
+    if dups:
+        print 'Duplicate Images Found. . .Please Check'
 
 # Image Hash Checker
 ##rms = math.sqrt(reduce(operator.add,
 ##	map(lambda a,b: (a-b)**2, h1, h2))/len(h1))
 
-test_images = os.listdir(os.getcwd()+'/test/')
-m = [os.getcwd()+'/test/'+i for i in test_images]
-for i in m:
-    img_hash = dhash(Image.open(i))
-    dups =[dup for dup in img_hash if dup not in img_hash]
-    if dups:
-        print dups
+def dup_image_chk():
+    test_images = os.listdir(os.getcwd()+'/test/')
+    m = [os.getcwd()+'/test/'+i for i in test_images]
+    for i in m:
+        img_hash = dhash(Image.open(i))
+        dups =  [x for x, y in collections.Counter(img_hash).items() if y > 1]
+        if dups:
+            print 'Dup Images Found. .'
+        
+
+get_image_from_output(temp)
+dup_image_chk()
 
 #print value['productReviews']['dealTitle']
