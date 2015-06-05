@@ -9,7 +9,7 @@ import Image
 from image_hash import dhash
 
 
-urls = ["https://www.groupon.com/deals/gg-full-set-of-pique-fabric-car-seat-covers"]
+urls = ["https://www.groupon.com/deals/gg-3-in-1-deluxe-pet-bed-and-carseat"]
 pat = re.compile('<script>\s+\s+var+\s+payload+\s+=+\s+(.+?)false};+\s')
 
 
@@ -55,9 +55,6 @@ def dup_image_chk():
     for i in m:
         img_hash = dhash(Image.open(i))
         dups =  [x for x, y in collections.Counter(img_hash).items() if y > 1]
-        if dups:
-            print 'Dup Images Found. .'
-        
 
 get_image_from_output(temp)
 dup_image_chk()
